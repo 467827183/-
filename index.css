@@ -1,0 +1,197 @@
+html,body{height: 100%;overflow: hidden}
+html,body,h1,h2,h3,h4,h5,h6,p,ul,li{margin: 0;padding: 0;font: 14px "微软雅黑";}
+a{text-decoration: none;display: block;}
+li{list-style: none;}
+img{display: block;}
+
+/*清除浮动*/
+.clearfix{*zoom: 1;}
+.clearfix:after{content: "";display: block;clear: both;}
+
+/*公共样式*/
+
+
+
+
+/*头部样式*/
+#wrap{
+    height: 100%;
+}
+.header{
+    height: 80px;
+    background: pink;
+    position: relative;
+}
+.header-center{
+    width: 1100px;
+    height: 80px;
+    margin: 0 auto;
+    background: deeppink;
+}
+.logo{
+    float: left;
+    margin-top: 15px;
+}
+.music{
+    float: left;
+    margin-top: 50px;
+}
+.nav{
+    float: right;
+    margin-top: 50px;
+}
+.nav li{
+    float: left;
+    margin-left: 40px;
+    position: relative;
+    cursor: pointer;
+}
+.nav li:hover .down{
+    width: 100%;
+}
+.top{
+    color:#009EE0;
+}
+.down{
+    position: absolute;
+    top: 0;
+    left:0 ;
+    width: 0;
+    overflow: hidden;
+    transition: width 1s;
+}
+.ass{
+    width:21px;
+    height: 11px;
+    background: url("./imgs/arrow.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 50%;
+    bottom: -11px;
+    transition: left 1s;
+    z-index: 10;
+}
+#main{
+    position: absolute;
+    top: 80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+.content{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 500%;
+    transition: top 1s;
+
+}
+.content>li{
+    height: 20%;
+    width: 100%;
+    position: relative;
+    background: pink;
+}
+.content>li>section{
+    width: 1100px;
+    height: 520px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -550px;
+    margin-top: -260px;
+}
+.home .pic{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+.home .pic>li{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    line-height: 520px;
+    text-align: center;
+    visibility: hidden;
+}
+.home .pic li.active{
+    visibility: visible;
+}
+.home .pic li:nth-child(1){
+    background:#dc6c5f;
+}
+.home .pic li:nth-child(2){
+    background:#95dc84;
+}
+.home .pic li:nth-child(3){
+    background:#64b9d2;
+}
+.home .pic li:nth-child(4){
+    background:#000000;
+}
+.title{
+    color: #ffffff;
+    font-size:80px;
+    line-height:0.8;
+    font-weight:bold;
+    letter-spacing:-5px;
+}
+.home .pic li.rightshow{
+    visibility: visible;
+    animation: rightShow 2s linear ;
+}
+.home .pic li.leftshow{
+    visibility: visible;
+    animation: leftShow 2s linear ;
+}
+.home .pic li.righthide{
+    visibility: hidden;
+    animation: rightHide 2s linear ;
+}
+.home .pic li.lefthide{
+    visibility: hidden;
+    animation: leftHide 2s linear ;
+}
+@keyframes rightShow {
+    0%{visibility: hidden;transform: translateZ(-200px)}
+    50%{transform: translateX(40%) rotateY(-30deg) scale(0.8) }
+    100%{}
+}
+@keyframes leftHide {
+    0%{visibility: visible}
+    50%{ transform: translateX(-40%) rotateY(30deg) scale(0.8)}
+    100%{transform: translateZ(-200px);visibility: hidden}
+}
+@keyframes leftShow {
+    0%{visibility: hidden;transform: translateZ(-200px)}
+    50%{transform: translateX(-40%) rotateY(30deg) scale(0.8) }
+    100%{}
+}
+@keyframes rightHide {
+    0%{visibility: visible}
+    50%{ transform: translateX(40%) rotateY(-30deg) scale(0.8)}
+    100%{visibility: hidden;transform: translateZ(-200px)}
+}
+.content .home .point{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.content .home .point li{
+    float: left;
+    width:20px;
+    height: 20px;
+    background: rgba(255,255,255,0.5);
+    box-sizing: border-box;
+    padding: 2px;
+    box-shadow: 0 0 4px rgba(25,25,25,0.8);
+    border-radius: 50%;
+}
+.content .home .point .active{
+     background: white;
+}
